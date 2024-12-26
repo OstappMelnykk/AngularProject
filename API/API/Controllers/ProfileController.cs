@@ -14,7 +14,7 @@ public class ProfileController : ControllerBase
     {
 
         var random = new Random();
-        int count = random.Next(5, 21); // Від 5 до 20 профілів
+        int count = random.Next(3, 7); 
         var profiles = Enumerable.Range(1, count)
             .Select(index => GenerateRandomProfile(index))
             .ToList();
@@ -26,7 +26,6 @@ public class ProfileController : ControllerBase
     {
         var random = new Random();
 
-        // Дані для генерації
         var usernames = new[]
         {
             "user123", "coolCoder", "devGuy", "techGal", "adminPro", "dataWizard", "codeLover", "alphaTester",
@@ -69,7 +68,6 @@ public class ProfileController : ControllerBase
             "Node.js", "TypeScript", "PHP", "Ruby", "Scala", "Swift", "Objective-C", "Rust", "Perl"
         };
 
-        // Генерація профілю
         return new Profile
         {
             Id = id,
