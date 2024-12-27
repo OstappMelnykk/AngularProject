@@ -1,18 +1,34 @@
-<ul class="profile-list">
-  <li class="profile-card">
-    <div class="profile-avatar">
-      <img src="avatar1.jpg" alt="Аватар">
-    </div>
-    <div class="profile-details">
-      <h3>Іван Іванов <span class="badge">Активний</span></h3>
-      <p>Username: ivanov</p>
-      <p>Місто: Київ</p>
-      <p>Стек: HTML, CSS, JavaScript</p>
-      <p>Опис: Фронтенд розробник з 5-річним досвідом.</p>
-    </div>
-    <div class="subscriptions">
-      <span>150</span>
-      Підписки
-    </div>
-  </li>
-</ul>
+@if(profile){
+  <ul class="profile-list">
+    <li class="profile-card">
+      <div class="profile-avatar">
+        <img src="avatar1.jpg" alt="Аватар">
+      </div>
+      <div class="profile-details">
+        <h3>{{ profile.firstName }} {{profile.lastName}}
+          <span
+            [ngClass]="profile.isActive ? 'badge-active' : 'badge-inactive'">
+            {{ profile.isActive ? 'Активний' : 'Неактивний' }}
+          </span>
+
+
+        </h3>
+        <p>Username: {{ profile.username }}</p>
+        <p>Місто: {{ profile.city }}</p>
+        <p>Стек:
+          @for (skill of profile.stack; track skill){
+            <span style="font-size: 18px;">|{{ skill }}| </span>
+          }
+        </p>
+        <p>Опис: {{ profile.description }}</p>
+      </div>
+      <div class="subscriptions">
+        <span>{{ profile.subscriptionsAmount }}</span>
+        Підписки
+      </div>
+    </li>
+  </ul>
+}
+
+
+

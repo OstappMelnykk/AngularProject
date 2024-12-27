@@ -66,8 +66,23 @@ body {
   background-color: #28a745;
 }
 
-.badge.inactive {
-  background-color: #dc3545;
+
+.badge-active {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge-inactive {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: red;
 }
 
 .subscriptions {
@@ -80,3 +95,6 @@ body {
   display: block;
   font-size: 16px;
 }
+
+
+
