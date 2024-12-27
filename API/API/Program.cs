@@ -6,14 +6,23 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddAuthorization();
+        
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(policy =>
+            {
+                policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+        });
+        
 
         builder.Services.AddControllers();
         builder.Services.AddAuthorization();
-        builder.Services.AddCors();
-        
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        
 
         var app = builder.Build();
         app.UseStaticFiles();
@@ -34,7 +43,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-
+        app.UseCors();
         app.UseAuthorization();
         app.MapControllers();
         app.Run();
