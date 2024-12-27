@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-list {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.profile-card:hover {
+  background-color: #f9f9f9;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.profile-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.profile-details .badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge.inactive {
+  background-color: #dc3545;
+}
+
+.subscriptions {
+  font-size: 14px;
+  text-align: center;
+}
+
+.subscriptions span {
+  font-weight: bold;
+  display: block;
+  font-size: 16px;
+}
